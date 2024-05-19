@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script src="validation.js"></script>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" name="username" placeholder="Username" data-validation="required"><br><br>
+        <input type="email" name="email" placeholder="Email" data-validation="required email"><br><br>
+        <input type="password" name="password" placeholder="Password" data-validation="required minLength:6"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            if (!validateForm(this)) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
